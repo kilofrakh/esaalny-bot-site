@@ -15,11 +15,16 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    /* Page background */
+    .stApp {
+        background-color: #ffffff !important;
+    }
+
     /* Force button styling */
     div.stButton > button, div.stLinkButton > a {
-        background: linear-gradient(90deg, #1a73e8, #4285f4) !important;
-        color: #ffffff !important;   /* Pure white text */
-        border: none !important;
+        background: #ffffff !important;   /* White background */
+        color: #1a73e8 !important;        /* Blue text */
+        border: 2px solid #1a73e8 !important;  /* Blue border */
         border-radius: 8px !important;
         padding: 12px 24px !important;
         font-weight: 700 !important;
@@ -28,8 +33,8 @@ st.markdown(
     }
 
     div.stButton > button:hover, div.stLinkButton > a:hover {
-        background: linear-gradient(90deg, #1558b0, #2b6ff3) !important;
-        color: #ffffff !important;   /* Keep white text */
+        background: #1a73e8 !important;   /* Blue background on hover */
+        color: #ffffff !important;        /* White text on hover */
         transform: scale(1.05);
     }
     </style>
