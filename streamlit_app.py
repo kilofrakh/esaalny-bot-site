@@ -16,7 +16,7 @@ st.markdown("""
     <style>
         /* Global background */
         .stApp {
-            background-color: #f8fafc;
+            background-color: #f9fafb;
             font-family: 'Segoe UI', sans-serif;
         }
 
@@ -25,15 +25,18 @@ st.markdown("""
             font-size: 3rem;
             font-weight: 800;
             text-align: center;
-            background: linear-gradient(90deg, #2563eb, #1d4ed8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #1e40af; /* Strong blue */
         }
         .hero-subtitle {
             text-align: center;
             font-size: 1.4rem;
-            color: #374151;
+            color: #2563eb; /* Lighter blue */
             margin-bottom: 1.5em;
+        }
+
+        /* Normal text */
+        p, li, .stMarkdown, .stText {
+            color: #1e3a8a !important; /* Blue text */
         }
 
         /* Buttons */
@@ -53,7 +56,7 @@ st.markdown("""
 
         /* Pricing cards */
         .pricing-card {
-            background: white;
+            background: #ffffff;
             padding: 2em;
             border-radius: 16px;
             box-shadow: 0px 6px 20px rgba(0,0,0,0.05);
@@ -65,16 +68,16 @@ st.markdown("""
         }
         .pricing-card h3 {
             font-size: 1.5rem;
-            color: #111827;
+            color: #1e40af; /* Dark blue headings */
             margin-bottom: 0.5em;
         }
         .pricing-card p {
-            color: #4b5563;
+            color: #2563eb; /* Lighter blue text */
         }
 
         /* Section headers */
         h2, h3 {
-            color: #111827;
+            color: #1e40af !important; /* Strong blue */
             font-weight: 700;
             margin-top: 1.5em;
         }
@@ -83,7 +86,7 @@ st.markdown("""
         footer {
             text-align: center;
             padding: 2em 0;
-            color: #6b7280;
+            color: #2563eb;
             font-size: 0.9rem;
         }
     </style>
@@ -149,7 +152,7 @@ with col1:
         <div class="pricing-card">
             <h3>Starter</h3>
             <p><strong>900 EGP / month</strong></p>
-            <p>✅ 1 Website Integration<br>✅ Smart Recommendations<br>✅ Email Support</p>
+            <p>1 Website Integration<br>Smart Recommendations<br>Email Support</p>
         </div>
         """, unsafe_allow_html=True
     )
@@ -161,7 +164,7 @@ with col2:
         <div class="pricing-card">
             <h3>Pro</h3>
             <p><strong>1,800 EGP / month</strong></p>
-            <p>✅ Up to 3 Websites<br>✅ Advanced Personalization<br>✅ Priority Support</p>
+            <p>Up to 3 Websites<br>Advanced Personalization<br>Priority Support</p>
         </div>
         """, unsafe_allow_html=True
     )
@@ -173,7 +176,7 @@ with col3:
         <div class="pricing-card">
             <h3>Enterprise</h3>
             <p><strong>Custom Pricing</strong></p>
-            <p>✅ Unlimited Integrations<br>✅ White-label Branding<br>✅ Dedicated Manager</p>
+            <p>Unlimited Integrations<br>White-label Branding<br>Dedicated Manager</p>
         </div>
         """, unsafe_allow_html=True
     )
@@ -220,6 +223,6 @@ st.link_button("Request a Free Demo", "https://forms.gle/hHViV4U4hmpPY69L6")
 # Footer
 # ----------------------------
 st.markdown(
-    "<footer>© 2025 Esaalny Bot. Built with ❤️ in Egypt.</footer>",
+    "<footer>© 2025 Esaalny Bot. Built with passion in Egypt.</footer>",
     unsafe_allow_html=True
 )
