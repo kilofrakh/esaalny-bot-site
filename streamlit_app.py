@@ -17,7 +17,7 @@ st.markdown(
     <style>
     /* Page background */
     .stApp {
-        background-color: #ffffff !important;
+        background-color: #f5f7fa !important;
     }
 
     /* Texts */
