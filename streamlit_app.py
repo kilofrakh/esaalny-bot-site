@@ -5,11 +5,12 @@ import streamlit as st
 # ----------------------------
 st.set_page_config(
     page_title="Esaalny Bot - Smart AI Chatbot",
+    page_icon="🤖",
     layout="wide"
 )
 
 # ----------------------------
-# Custom CSS
+# Custom CSS for Styling
 # ----------------------------
 st.markdown(
     """
@@ -19,9 +20,9 @@ st.markdown(
         background-color: #ffffff;
     }
 
-    /* Text */
+    /* Texts */
     h1, h2, h3, h4, h5, h6, p, div, span {
-        color: #1a73e8 !important;
+        color: #1a73e8 !important; /* Google Blue */
     }
 
     /* Divider */
@@ -32,24 +33,18 @@ st.markdown(
     /* Buttons */
     .stButton > button, .stLinkButton > a {
         background: linear-gradient(90deg, #1a73e8, #4285f4);
-        color: white !important;
+        color: #0b2559 !important;   /* Dark blue text */
         border: none;
         border-radius: 8px;
         padding: 10px 20px;
-        font-weight: 600;
+        font-weight: 700;
         transition: 0.3s;
     }
+
     .stButton > button:hover, .stLinkButton > a:hover {
         background: linear-gradient(90deg, #1558b0, #2b6ff3);
+        color: #ffffff !important;   /* White text on hover */
         transform: scale(1.05);
-    }
-
-    /* Chat iframe style */
-    .chat-frame {
-        border: none;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        overflow: hidden;
     }
     </style>
     """,
@@ -127,39 +122,7 @@ st.divider()
 st.header("Try Esaalny Bot Live")
 st.write("Test how Esaalny Bot interacts in real time:")
 
-# Styled iframe for chatbot
-st.markdown(
-    """
-    <iframe src="https://esaalnybot-production.up.railway.app/chat" 
-            width="100%" height="600" class="chat-frame"></iframe>
-    """,
-    unsafe_allow_html=True
-)
-
-# Inject JS to make Enter submit messages in iframe
-st.markdown(
-    """
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const iframe = document.querySelector(".chat-frame");
-        iframe.onload = () => {
-            const doc = iframe.contentWindow.document;
-            doc.addEventListener("keydown", function(e) {
-                if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    const input = doc.querySelector("textarea");
-                    if (input) {
-                        const btn = doc.querySelector("button");
-                        if (btn) btn.click();
-                    }
-                }
-            });
-        };
-    });
-    </script>
-    """,
-    unsafe_allow_html=True
-)
+st.components.v1.iframe("https://esaalnybot-production.up.railway.app/chat", height=600)
 
 st.divider()
 
