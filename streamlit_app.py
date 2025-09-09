@@ -15,42 +15,26 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* Background */
-    .stApp {
-        background-color: #ffffff;
-    }
-
-    /* Texts */
-    h1, h2, h3, h4, h5, h6, p, div, span {
-        color: #1a73e8 !important; /* Google Blue */
-    }
-
-    /* Divider */
-    hr {
-        border: 1px solid #e0e0e0;
-    }
-
     /* Buttons */
     .stButton > button, .stLinkButton > a {
-        background: linear-gradient(90deg, #1a73e8, #4285f4);
-        color: #0b2559 !important;   /* Dark blue text */
-        border: none;
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-weight: 700;
-        transition: 0.3s;
+        background: linear-gradient(90deg, #1a73e8, #4285f4) !important;
+        color: #ffffff !important;   /* Force white text */
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 10px 20px !important;
+        font-weight: 700 !important;
+        transition: 0.3s !important;
     }
 
     .stButton > button:hover, .stLinkButton > a:hover {
-        background: linear-gradient(90deg, #1558b0, #2b6ff3);
-        color: #ffffff !important;   /* White text on hover */
+        background: linear-gradient(90deg, #1558b0, #2b6ff3) !important;
+        color: #ffffff !important;   /* Keep white text on hover */
         transform: scale(1.05);
     }
     </style>
     """,
     unsafe_allow_html=True
 )
-
 # ----------------------------
 # Hero Section
 # ----------------------------
