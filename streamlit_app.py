@@ -32,8 +32,8 @@ st.markdown(
 
     /* Buttons */
     div.stButton > button, div.stLinkButton > a {
-        background: #ffffff !important;        /* White background */
-        color: #1a73e8 !important;             /* Blue text */
+        background: #1a73e8 !important;   /* Blue background on hover */
+        color: #ffffff !important;             /* Blue text */
         border: 2px solid #1a73e8 !important;  /* Blue border */
         border-radius: 8px !important;
         padding: 12px 24px !important;
