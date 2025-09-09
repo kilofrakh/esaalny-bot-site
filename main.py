@@ -80,7 +80,7 @@ st.divider()
 st.header("🧪 Try Esaalny Bot Live")
 st.write("Test how Esaalny Bot interacts in real time:")
 
-st.components.v1.iframe("https://esaalnybot-production.up.railway.app//chat/ask", height=600)
+st.components.v1.iframe("https://esaalnybot-production.up.railway.app/chat/ask", height=600)
 
 st.divider()
 
