@@ -63,8 +63,7 @@ st.write("Give your customers a human-like experience with AI that sells, recomm
 col1, col2 = st.columns(2)
 with col1:
     st.link_button("Request Demo", "https://forms.gle/hHViV4U4hmpPY69L6")
-with col2:
-    st.link_button("Try Live Demo", "#demo")
+
 
 st.divider()
 
