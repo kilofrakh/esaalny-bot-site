@@ -20,20 +20,10 @@ st.markdown(
         background-color: #ffffff !important;
     }
 
-    /* Texts */
-    h1, h2, h3, h4, h5, h6, p, div, span, label {
-        color: #1a73e8 !important; /* Blue text everywhere */
-    }
-
-    /* Divider */
-    hr {
-        border: 1px solid #e0e0e0;
-    }
-
-    /* Buttons */
+    /* Force button styling */
     div.stButton > button, div.stLinkButton > a {
-        background: #1a73e8 !important;   /* Blue background on hover */
-        color: #ffffff !important;             /* Blue text */
+        background: #ffffff !important;   /* White background */
+        color: #1a73e8 !important;        /* Blue text */
         border: 2px solid #1a73e8 !important;  /* Blue border */
         border-radius: 8px !important;
         padding: 12px 24px !important;
@@ -43,8 +33,8 @@ st.markdown(
     }
 
     div.stButton > button:hover, div.stLinkButton > a:hover {
-        background: #1a73e8 !important;   /* Blue background on hover */
-        color: #ffffff !important;        /* White text on hover */
+         background: #ffffff !important;   /* White background */
+        color: #1a73e8 !important;       /* White text on hover */
         transform: scale(1.05);
     }
     </style>
