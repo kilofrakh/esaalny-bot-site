@@ -10,10 +10,73 @@ st.set_page_config(
 )
 
 # ----------------------------
+# Custom CSS for Styling
+# ----------------------------
+st.markdown("""
+    <style>
+        /* Global background */
+        body {
+            background-color: #f9fafb;
+        }
+
+        /* Title and headers */
+        .stApp h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1f2937;
+        }
+        .stApp h2, .stApp h3 {
+            color: #111827;
+            font-weight: 700;
+        }
+
+        /* Buttons */
+        .stButton>button, .stLinkButton>button {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            color: white !important;
+            border-radius: 12px;
+            padding: 0.6em 1.2em;
+            border: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .stButton>button:hover, .stLinkButton>button:hover {
+            background: linear-gradient(90deg, #1d4ed8, #2563eb);
+            transform: scale(1.05);
+        }
+
+        /* Pricing cards */
+        .pricing-card {
+            background: white;
+            padding: 2em;
+            border-radius: 16px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5em;
+        }
+        .pricing-card p {
+            color: #4b5563;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2em 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# ----------------------------
 # Hero Section
 # ----------------------------
-st.title("🤖 Esaalny Bot")
-st.subheader("Your Brand’s AI Chat Assistant")
+st.markdown("<h1 style='text-align: center;'>🤖 Esaalny Bot</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'>Your Brand’s AI Chat Assistant</h2>", unsafe_allow_html=True)
+
 st.write(
     """
     Customers don’t just want to see your products.  
@@ -63,21 +126,39 @@ st.header("💰 Simple & Transparent Pricing (in EGP)")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.subheader("Starter")
-    st.write("💵 900 EGP / month")
-    st.write("✅ 1 Website Integration\n✅ Smart Recommendations\n✅ Email Support")
+    st.markdown(
+        """
+        <div class="pricing-card">
+            <h3>Starter</h3>
+            <p>💵 900 EGP / month</p>
+            <p>✅ 1 Website Integration<br>✅ Smart Recommendations<br>✅ Email Support</p>
+        </div>
+        """, unsafe_allow_html=True
+    )
     st.link_button("Get Started", "https://forms.gle/hHViV4U4hmpPY69L6")
 
 with col2:
-    st.subheader("Pro")
-    st.write("💵 1,800 EGP / month")
-    st.write("✅ Up to 3 Websites\n✅ Advanced Personalization\n✅ Priority Support")
+    st.markdown(
+        """
+        <div class="pricing-card">
+            <h3>Pro</h3>
+            <p>💵 1,800 EGP / month</p>
+            <p>✅ Up to 3 Websites<br>✅ Advanced Personalization<br>✅ Priority Support</p>
+        </div>
+        """, unsafe_allow_html=True
+    )
     st.link_button("Get Started", "https://forms.gle/hHViV4U4hmpPY69L6")
 
 with col3:
-    st.subheader("Enterprise")
-    st.write("📞 Custom Pricing")
-    st.write("✅ Unlimited Integrations\n✅ White-label Branding\n✅ Dedicated Support Manager")
+    st.markdown(
+        """
+        <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <p>📞 Custom Pricing</p>
+            <p>✅ Unlimited Integrations<br>✅ White-label Branding<br>✅ Dedicated Support Manager</p>
+        </div>
+        """, unsafe_allow_html=True
+    )
     st.link_button("Contact Us", "https://forms.gle/hHViV4U4hmpPY69L6")
 
 st.divider()
@@ -117,5 +198,10 @@ st.write("Have questions? Want to see what Esaalny Bot can do for your business?
 
 st.link_button("📌 Request a Free Demo", "https://forms.gle/hHViV4U4hmpPY69L6")
 
-st.write("---")
-st.caption("© 2025 Esaalny Bot. Built with ❤️ in Egypt.")
+# ----------------------------
+# Footer
+# ----------------------------
+st.markdown(
+    "<footer>© 2025 Esaalny Bot. Built with ❤️ in Egypt.</footer>",
+    unsafe_allow_html=True
+)
