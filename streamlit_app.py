@@ -5,7 +5,7 @@ import streamlit as st
 # ----------------------------
 st.set_page_config(
     page_title="Esaalny Bot - Smart AI Chatbot",
-    page_icon="🤖",
+    page_icon="💬",
     layout="wide"
 )
 
@@ -15,33 +15,39 @@ st.set_page_config(
 st.markdown("""
     <style>
         /* Global background */
-        body {
-            background-color: #f9fafb;
+        .stApp {
+            background-color: #f8fafc;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        /* Title and headers */
-        .stApp h1 {
+        /* Hero section */
+        .hero-title {
             font-size: 3rem;
             font-weight: 800;
-            color: #1f2937;
+            text-align: center;
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .stApp h2, .stApp h3 {
-            color: #111827;
-            font-weight: 700;
+        .hero-subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #374151;
+            margin-bottom: 1.5em;
         }
 
         /* Buttons */
         .stButton>button, .stLinkButton>button {
             background: linear-gradient(90deg, #2563eb, #3b82f6);
             color: white !important;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 0.6em 1.2em;
             border: none;
             font-weight: 600;
-            transition: 0.2s;
+            transition: all 0.2s ease-in-out;
         }
         .stButton>button:hover, .stLinkButton>button:hover {
-            background: linear-gradient(90deg, #1d4ed8, #2563eb);
+            background: linear-gradient(90deg, #1e40af, #2563eb);
             transform: scale(1.05);
         }
 
@@ -50,15 +56,27 @@ st.markdown("""
             background: white;
             padding: 2em;
             border-radius: 16px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0px 6px 20px rgba(0,0,0,0.05);
             text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
         }
         .pricing-card h3 {
             font-size: 1.5rem;
+            color: #111827;
             margin-bottom: 0.5em;
         }
         .pricing-card p {
             color: #4b5563;
+        }
+
+        /* Section headers */
+        h2, h3 {
+            color: #111827;
+            font-weight: 700;
+            margin-top: 1.5em;
         }
 
         /* Footer */
@@ -74,55 +92,55 @@ st.markdown("""
 # ----------------------------
 # Hero Section
 # ----------------------------
-st.markdown("<h1 style='text-align: center;'>🤖 Esaalny Bot</h1>", unsafe_allow_html=True)
-st.markdown("<h2 style='text-align: center;'>Your Brand’s AI Chat Assistant</h2>", unsafe_allow_html=True)
+st.markdown("<h1 class='hero-title'>Esaalny Bot</h1>", unsafe_allow_html=True)
+st.markdown("<p class='hero-subtitle'>Your Brand’s AI Chat Assistant</p>", unsafe_allow_html=True)
 
 st.write(
     """
     Customers don’t just want to see your products.  
     They want to feel your brand’s **soul and identity**.  
 
-    Esaalny Bot is built to talk like your brand, recommend the right products,  
-    and make every visitor feel like they’re chatting with a real team member.
+    Esaalny Bot is designed to speak in your brand’s voice, recommend the right products,  
+    and make every visitor feel like they’re talking with a real team member.
     """
 )
 
 col1, col2 = st.columns(2)
 with col1:
-    st.link_button("🚀 Request a Free Demo", "https://forms.gle/hHViV4U4hmpPY69L6")
+    st.link_button("Request a Free Demo", "https://forms.gle/hHViV4U4hmpPY69L6")
 with col2:
-    st.link_button("👀 Try Live Demo", "#demo")
+    st.link_button("Try Live Demo", "#demo")
 
 st.divider()
 
 # ----------------------------
 # Features Section
 # ----------------------------
-st.header("✨ What Makes Esaalny Bot Different?")
+st.header("Why Choose Esaalny Bot?")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.subheader("🎯 Personalized")
-    st.write("Understands each customer and recommends what fits their needs.")
+    st.subheader("Personalized")
+    st.write("Understands each customer and recommends products that fit their needs.")
 
 with col2:
-    st.subheader("💡 Brand Voice")
-    st.write("Trains to speak like your brand — no boring, generic chatbot replies.")
+    st.subheader("Brand Voice")
+    st.write("Adapts to your tone and style, so every reply feels authentic.")
 
 with col3:
-    st.subheader("⚡ Plug & Play")
-    st.write("Easy to add to your website, Shopify, or even custom platforms.")
+    st.subheader("Easy Integration")
+    st.write("Works smoothly with websites, Shopify, and custom platforms.")
 
 with col4:
-    st.subheader("📈 Sales Growth")
-    st.write("Turns visitors into paying customers with engaging conversations.")
+    st.subheader("Boost Sales")
+    st.write("Converts visitors into loyal customers with engaging conversations.")
 
 st.divider()
 
 # ----------------------------
 # Pricing Section (EGP)
 # ----------------------------
-st.header("💰 Simple & Transparent Pricing (in EGP)")
+st.header("Transparent Pricing (EGP)")
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -130,32 +148,32 @@ with col1:
         """
         <div class="pricing-card">
             <h3>Starter</h3>
-            <p>💵 900 EGP / month</p>
+            <p><strong>900 EGP / month</strong></p>
             <p>✅ 1 Website Integration<br>✅ Smart Recommendations<br>✅ Email Support</p>
         </div>
         """, unsafe_allow_html=True
     )
-    st.link_button("Get Started", "https://forms.gle/hHViV4U4hmpPY69L6")
+    st.link_button("Get Starter", "https://forms.gle/hHViV4U4hmpPY69L6")
 
 with col2:
     st.markdown(
         """
         <div class="pricing-card">
             <h3>Pro</h3>
-            <p>💵 1,800 EGP / month</p>
+            <p><strong>1,800 EGP / month</strong></p>
             <p>✅ Up to 3 Websites<br>✅ Advanced Personalization<br>✅ Priority Support</p>
         </div>
         """, unsafe_allow_html=True
     )
-    st.link_button("Get Started", "https://forms.gle/hHViV4U4hmpPY69L6")
+    st.link_button("Get Pro", "https://forms.gle/hHViV4U4hmpPY69L6")
 
 with col3:
     st.markdown(
         """
         <div class="pricing-card">
             <h3>Enterprise</h3>
-            <p>📞 Custom Pricing</p>
-            <p>✅ Unlimited Integrations<br>✅ White-label Branding<br>✅ Dedicated Support Manager</p>
+            <p><strong>Custom Pricing</strong></p>
+            <p>✅ Unlimited Integrations<br>✅ White-label Branding<br>✅ Dedicated Manager</p>
         </div>
         """, unsafe_allow_html=True
     )
@@ -166,8 +184,8 @@ st.divider()
 # ----------------------------
 # Live Demo Section
 # ----------------------------
-st.header("🧪 Try Esaalny Bot Right Now")
-st.write("See how the chatbot talks with your customers in real time:")
+st.header("Try Esaalny Bot Live")
+st.write("See how the chatbot engages with your customers:")
 
 st.components.v1.iframe("https://esaalnybot-production.up.railway.app/chat", height=600)
 
@@ -176,7 +194,7 @@ st.divider()
 # ----------------------------
 # About Section
 # ----------------------------
-st.header("📖 Our Story")
+st.header("About Esaalny Bot")
 st.write(
     """
     I built Esaalny Bot after seeing how most brands struggle to connect  
@@ -193,10 +211,10 @@ st.divider()
 # ----------------------------
 # Contact Section
 # ----------------------------
-st.header("📩 Let’s Talk")
+st.header("Contact Us")
 st.write("Have questions? Want to see what Esaalny Bot can do for your business?")
 
-st.link_button("📌 Request a Free Demo", "https://forms.gle/hHViV4U4hmpPY69L6")
+st.link_button("Request a Free Demo", "https://forms.gle/hHViV4U4hmpPY69L6")
 
 # ----------------------------
 # Footer
