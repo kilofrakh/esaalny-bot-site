@@ -20,10 +20,20 @@ st.markdown(
         background-color: #ffffff !important;
     }
 
-    /* Force button styling */
+    /* Texts */
+    h1, h2, h3, h4, h5, h6, p, div, span, label {
+        color: #1a73e8 !important; /* Blue text everywhere */
+    }
+
+    /* Divider */
+    hr {
+        border: 1px solid #e0e0e0;
+    }
+
+    /* Buttons */
     div.stButton > button, div.stLinkButton > a {
-        background: #ffffff !important;   /* White background */
-        color: #1a73e8 !important;        /* Blue text */
+        background: #ffffff !important;        /* White background */
+        color: #1a73e8 !important;             /* Blue text */
         border: 2px solid #1a73e8 !important;  /* Blue border */
         border-radius: 8px !important;
         padding: 12px 24px !important;
