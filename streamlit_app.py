@@ -5,12 +5,11 @@ import streamlit as st
 # ----------------------------
 st.set_page_config(
     page_title="Esaalny Bot - Smart AI Chatbot",
-    page_icon="🤖",
     layout="wide"
 )
 
 # ----------------------------
-# Custom CSS for Styling
+# Custom CSS
 # ----------------------------
 st.markdown(
     """
@@ -20,9 +19,9 @@ st.markdown(
         background-color: #ffffff;
     }
 
-    /* Texts */
+    /* Text */
     h1, h2, h3, h4, h5, h6, p, div, span {
-        color: #1a73e8 !important; /* Google Blue */
+        color: #1a73e8 !important;
     }
 
     /* Divider */
@@ -40,10 +39,17 @@ st.markdown(
         font-weight: 600;
         transition: 0.3s;
     }
-
     .stButton > button:hover, .stLinkButton > a:hover {
         background: linear-gradient(90deg, #1558b0, #2b6ff3);
         transform: scale(1.05);
+    }
+
+    /* Chat iframe style */
+    .chat-frame {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        overflow: hidden;
     }
     </style>
     """,
@@ -121,7 +127,39 @@ st.divider()
 st.header("Try Esaalny Bot Live")
 st.write("Test how Esaalny Bot interacts in real time:")
 
-st.components.v1.iframe("https://esaalnybot-production.up.railway.app/chat", height=600)
+# Styled iframe for chatbot
+st.markdown(
+    """
+    <iframe src="https://esaalnybot-production.up.railway.app/chat" 
+            width="100%" height="600" class="chat-frame"></iframe>
+    """,
+    unsafe_allow_html=True
+)
+
+# Inject JS to make Enter submit messages in iframe
+st.markdown(
+    """
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const iframe = document.querySelector(".chat-frame");
+        iframe.onload = () => {
+            const doc = iframe.contentWindow.document;
+            doc.addEventListener("keydown", function(e) {
+                if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    const input = doc.querySelector("textarea");
+                    if (input) {
+                        const btn = doc.querySelector("button");
+                        if (btn) btn.click();
+                    }
+                }
+            });
+        };
+    });
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 
 st.divider()
 
